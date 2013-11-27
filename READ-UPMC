@@ -1,0 +1,16 @@
+File "eval-upmc.c" defines the transformation of arithmetic expressions in abstract syntax tree.
+typedef struct tree
+{
+  int type;
+  int value;
+  struct tree *left;
+  struct tree *right;
+}tree;
+
+A node can a number(integer) or an operator like(+, -, *, /) and will be represented by the type variable.(We'll define constant value for ADD, SUB, MUL, DIV, NUMBER)
+"value" is the value of the node.(If it's a number)
+
+Normaly we should have to garanty these few cases:
+	- an arithmetic expression well written
+	- manage the division by zero
+	- calculations are performed in accordance with the operational priorities
